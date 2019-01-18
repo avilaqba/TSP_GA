@@ -5,7 +5,7 @@ CityList = []
 lines = open(r'Distances.txt').readlines()
 dc = 0
 matrix = np.zeros(shape = (8,9))     
-for line in lines:                   # Creating city-list and a matrix of distances
+for line in lines:                   # Creating a city-list and a matrix of distances
     if line.startswith('Distance'):
         for city in range(1,9):
             CityList.append(line.split(',')[city].split('\n')[0])
@@ -33,7 +33,7 @@ for pop in range(N):
 print 'The initial distance is %d kilometers.'%Sum[0] # Printing an initial distance
 
 Routes,Distances = [], []
-for g in range(100):                      # A hundred generations is considered!
+for g in range(100):               # A hundred generations is considered!
     Usum = Sum + [0]
     Usum.sort()
     Fit = Usum[1:N/10]             # According to Steady-state modality, the best ten percent
@@ -78,7 +78,7 @@ for g in range(100):                      # A hundred generations is considered!
             Sum.append(SUM(d))
     Distances.append(min(Sum))
     Routes.append(RandomList[Sum.index(min(Sum))])
-                                 # Priting the global minima distance and correlated route!
+                                 # Priting the global minima distance and correlating route!
 print 'The final distance is %d, and the route is as follows;'%min(Distances) # According to my GA algorithm, I think, 3759km is the global minima distance!
 for rt in Routes[Distances.index(min(Distances))][0]:
     print '%d.'%rt, CityList[rt]  
