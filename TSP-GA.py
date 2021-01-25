@@ -78,7 +78,7 @@ for g in range(100):               # A hundred generations is considered!
             Sum.append(SUM(d))
     Distances.append(min(Sum))
     Routes.append(RandomList[Sum.index(min(Sum))])
-                                 # Priting the global minima distance and correlating route!
+# Printing the global minima distance and correlating route!
 print 'The final distance is %d, and the route is as follows;'%min(Distances) # According to this GA algorithm, 3759km is the global minima distance!
 for rt in Routes[Distances.index(min(Distances))][0]:
     print '%d.'%rt, CityList[rt]  
